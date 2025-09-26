@@ -9,7 +9,7 @@ export default function ApiTest() {
   const testHealthEndpoint = async () => {
     setLoading(true)
     try {
-      const response = await fetch('http://localhost:5000/health')
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/health`)
       const data = await response.json()
       setResult('Health check: ' + JSON.stringify(data, null, 2))
     } catch (error) {
@@ -21,7 +21,7 @@ export default function ApiTest() {
   const testAuthEndpoint = async () => {
     setLoading(true)
     try {
-      const response = await fetch('http://localhost:5000/api/auth/test')
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/auth/test`)
       const data = await response.json()
       setResult('Auth test: ' + JSON.stringify(data, null, 2))
     } catch (error) {
@@ -33,7 +33,7 @@ export default function ApiTest() {
   const testRegistration = async () => {
     setLoading(true)
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

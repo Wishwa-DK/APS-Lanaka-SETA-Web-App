@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     const token = authHeader.split(' ')[1];
     
     // Forward to backend with user context
-    const backendResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/policies`, {
+    const backendResponse = await fetch(`${process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/policies`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,

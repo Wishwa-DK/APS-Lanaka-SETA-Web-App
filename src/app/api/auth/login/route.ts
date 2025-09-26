@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     console.log('Proxy: Received login request for:', body.email)
     
     // Forward the request to the backend
-    const backendResponse = await fetch('http://localhost:5000/api/auth/login', {
+    const backendResponse = await fetch(`${process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

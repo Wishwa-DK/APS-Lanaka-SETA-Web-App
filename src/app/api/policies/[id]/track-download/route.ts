@@ -26,7 +26,7 @@ export async function POST(
     console.log(`📥 Tracking download for policy ${policyId}`)
 
     // Forward to backend (now with enhanced acknowledgment tracking)
-    const response = await fetch(`http://localhost:${backendPort}/api/policies/${policyId}/track-download`, {
+    const response = await fetch(`${process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/policies/${policyId}/track-download`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,

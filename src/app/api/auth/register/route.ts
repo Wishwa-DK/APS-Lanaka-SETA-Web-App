@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     console.log('Proxy: Received registration request:', body)
     
     // Forward the request to the backend
-    const backendResponse = await fetch('http://localhost:5000/api/auth/register', {
+    const backendResponse = await fetch(`${process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/auth/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
