@@ -1,5 +1,5 @@
 // API utility for making requests to the backend
-const API_BASE_URL = '/api'; // Use Next.js API routes as proxy
+const API_BASE_URL = 'https://aps-lanaka-seta-web-app-production.up.railway.app/api'; // Use Next.js API routes as proxy
 
 // Registration response from backend
 interface RegisterResponse {
