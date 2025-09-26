@@ -18,7 +18,7 @@ const trainingRoutes = require('./routes/training');
 const riskRoutes = require('./routes/risk');
 const complianceRoutes = require('./routes/compliance');
 const auditRoutes = require('./routes/audit');
-const profileRoutes = require('./routes/simple-profile');
+//const profileRoutes = require('./routes/simple-profile');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -157,7 +157,7 @@ app.use('/api/training', trainingRoutes);
 app.use('/api/risk', riskRoutes);
 app.use('/api/compliance', complianceRoutes);
 app.use('/api/audit', auditRoutes);
-app.use('/api/profile', profileRoutes);
+//app.use('/api/profile', profileRoutes);
 
 // API documentation endpoint
 app.get('/api', (req, res) => {
